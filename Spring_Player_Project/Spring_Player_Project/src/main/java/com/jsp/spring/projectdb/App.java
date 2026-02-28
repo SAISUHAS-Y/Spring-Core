@@ -1,0 +1,71 @@
+package com.jsp.spring.projectdb;
+
+import java.util.Scanner;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.jsp.spring.projectdb.controller.PlayerController;
+
+public class App {
+	public static void main(String[] args) {
+
+		ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+		PlayerController controller = ac.getBean(PlayerController.class);
+
+		Scanner sc = new Scanner(System.in);
+		
+		while (true) {
+			System.out.println(
+					"Choose an Option:\n1.addPlayer\t2.findPlayerById:\t3.findPlayerByName:\n4.findAllPlayerByNation:"
+							+ "\t5.findAllPlayerBetweenAge:\n6.findAllPlayerBySalaryGreaterThan:\t7.updatePlayerSalaryByTeam:"
+							+ "\n8.updatePlayerTeamByName:\t9.deleteAllPlayerByTeam:\n10.deletePlayersBetweenSalary:\t11.exit");
+			System.out.println("Enter your Choice");
+
+			int choice = sc.nextInt();
+
+			switch (choice) {
+			case 1:
+				controller.addPlayer();
+				break;
+			case 2:
+				controller.findPlayerById();
+				break;
+			case 3:
+				controller.findPlayerByName();
+				break;
+			case 4:
+				controller.findAllPlayerByNation();
+				break;
+			case 5:
+				controller.findAllPlayerBetweenAge();
+				break;
+			case 6:
+				controller.findAllPlayerBySalaryGreaterThan();
+				break;
+			case 7:
+				controller.updatePlayerSalaryByTeam();
+				break;
+			case 8:
+				controller.updatePlayerTeamByName();
+				break;
+			case 9:
+				controller.deleteAllPlayerByTeam();
+				;
+				break;
+			case 10:
+				controller.deletePlayersBetweenSalary();
+				break;
+			case 11:
+				System.out.println("Exiting ... Thanks Bhai");
+				System.exit(0);
+				break;
+
+			default:
+				System.out.println("Invalid Choice Bhai Kaya Kar raha Hai ....");
+				break;
+			}
+		}
+
+	}
+}
