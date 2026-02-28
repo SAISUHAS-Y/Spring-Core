@@ -1,0 +1,10 @@
+package com.sai.spring.annotation.tiger;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Tiger {
+		public void sound() {
+			System.out.println("roar");
+		}
+}

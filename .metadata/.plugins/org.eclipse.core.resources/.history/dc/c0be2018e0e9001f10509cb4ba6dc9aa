@@ -1,0 +1,17 @@
+package com.sai.spring.spring_autowiring;
+
+public class Student {
+	private Address address;
+	
+
+	Student(){
+		System.out.println("object created");
+	}
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+}

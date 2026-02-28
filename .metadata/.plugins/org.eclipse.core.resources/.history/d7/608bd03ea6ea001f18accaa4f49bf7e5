@@ -1,0 +1,15 @@
+package com.sai.spring.annotation;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import com.sai.spring.annotation.tiger.Tiger;
+
+public class App 
+{
+	public static void main( String[] args )
+	{
+		ApplicationContext ac=new AnnotationConfigApplicationContext(AppConfig.class);
+		Tiger t=ac.getBean(Tiger.class);
+		t.sound();
+	}
+}

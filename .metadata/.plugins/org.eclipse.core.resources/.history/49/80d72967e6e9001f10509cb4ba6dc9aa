@@ -1,0 +1,19 @@
+package com.sai.spring.annotation;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class App 
+{
+	public static void main( String[] args )
+	{
+		ApplicationContext ac=new ClassPathXmlApplicationContext("spring.xml");
+		Tiger t=ac.getBean(Tiger.class);
+		t.sound();
+
+		//by using beanId and always beanId will be in lower case
+		//if there are multiple words use camel casing
+		Tiger t1=(Tiger) ac.getBean("tiger");
+		t1.sound();
+	}
+}

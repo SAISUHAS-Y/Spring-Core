@@ -1,0 +1,5 @@
+package com.sai.spring_layer;
+
+public class AppConfig {
+
+}

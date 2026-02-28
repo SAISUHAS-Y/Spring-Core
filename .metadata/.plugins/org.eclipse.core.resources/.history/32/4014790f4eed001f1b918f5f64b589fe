@@ -1,0 +1,171 @@
+package com.jsp.spring.projectdb.service;
+
+import java.util.List;
+import java.util.Scanner;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.jsp.spring.projectdb.entity.Player;
+import com.jsp.spring.projectdb.repository.PlayerRepository;
+
+@Service
+public class PlayerService {
+	Scanner sc = new Scanner(System.in);
+
+	@Autowired
+	private PlayerRepository playerRepository;
+
+	public void addPlayer() {
+		Player player = new Player();
+		System.out.println("Enter the player Id:-");
+		player.setPlayerId(sc.nextInt());
+		System.out.println("Enter the player Name:-");
+		player.setName(sc.next());
+		System.out.println("Enter the player Age:-");
+		player.setAge(sc.nextInt());
+		System.out.println("Enter the player Team:-");
+		player.setTeamName(sc.next());
+		System.out.println("Enter the player Salary:-");
+		player.setSalary(sc.nextInt());
+		System.out.println("Enter the player nation:-");
+		player.setNation(sc.next());
+
+		playerRepository.addPlayer(player);
+		System.out.println("Data is inserted Succesfully");
+
+	}
+
+	public void findPlayerById() {
+		System.out.println("Enter the player Id to find");
+		Player player = playerRepository.findPlayerById(sc.nextInt());
+		if (player != null) {
+			System.out.println(player);
+		} else {
+			System.err.println("Data not found");
+		}
+
+	}
+
+	public void findPlayerByName() {
+		System.out.println("Enter the Player name");
+		List<Player> player = playerRepository.findPlayerByName(sc.next());
+		if (player.isEmpty()) {
+			System.out.println(player);
+		} else {
+			System.err.println(" Data Is Not Found");
+		}
+	}
+
+	public void findAllPlayerByNation() {
+		System.out.println("Enter the Player nation");
+		List<Player> player = playerRepository.findPlayerByName(sc.next());
+		if (player.isEmpty()) {
+			for (Player p : player) {
+				System.out.println(p);
+			}
+		} else {
+			System.err.println(" Data Is Not Found");
+		}
+
+	}
+
+	public void findAllPlayerBetweenAge() {
+
+		System.out.println("Enter the Age1");
+		int age1 = sc.nextInt();
+		System.out.println("Enter the Age2");
+		int age2 = sc.nextInt();
+
+		List<Player> player = playerRepository.findAllPlayerBetweenAge(age1, age2);
+
+		if (player.isEmpty()) {
+			for (Player p : player) {
+				System.out.println(p);
+			}
+		} else {
+			System.err.println(" Data Is Not Found");
+		}
+
+	}
+
+	public void findAllPlayerBySalaryGreaterThan() {
+		System.out.println("Enter the salary");
+		int salary = sc.nextInt();
+
+		List<Player> player = playerRepository.findAllPlayerBySalaryGreaterThan(salary);
+
+		if (player.isEmpty()) {
+			for (Player p : player) {
+				System.out.println(p);
+			}
+		} else {
+			System.err.println(" Data Is Not Found");
+		}
+	}
+
+	public void updatePlayerSalaryByTeam() {
+		System.out.println("Enter the Team Name:------");
+		List<Player> players=playerRepository.findPlayerByTeam(sc.next());
+		
+		if(players.isEmpty()) {
+			for(Player p:players) {
+				p.setSalary(p.getSalary()+100000);
+				playerRepository.updatePlayer(p);
+			}
+			System.out.println("Player Salary Updated Successfully");
+		}
+		else {
+			System.err.println("Data is -:not:- Updated Successfulll");
+		}
+
+	}
+
+	public void updatePlayerTeamByName() {
+		
+		System.out.println("Enter the Player Name to Update his Team");
+		List<Player>players=playerRepository.findPlayerByName(sc.next());
+		
+		System.out.println("Enter the Team NAme to Update");
+		String name=sc.next();
+		if(players.isEmpty()) {
+			for(Player player:players) {
+				player.setTeamName(name);
+				playerRepository.updatePlayer(player);
+			}
+			System.out.println("Player Salary Updated Successfully");
+			
+		}else {
+			System.err.println("Data is -:not:- Updated Successfulll");
+		}
+		
+
+	}
+
+	public void deleteAllPlayerByTeam() {
+		System.out.println("Enter the Team Name To Delete the Record");
+		
+		List<Player>players=playerRepository.deleteAllPlayersByTeam(sc.next());
+		if(players.isEmpty()) {
+			System.out.println("Data Get Deleted SuccessFully");
+		}else {
+			System.err.println("Data is -:NOT:- deleted Successfulll");
+		}
+
+	}
+
+	public void deletePlayersBetweenSalary() {
+		System.out.println("Enter the first Salary");
+		int a=sc.nextInt();
+		System.out.println("Enter the Second Salary");
+		int b=sc.nextInt();
+		List<Player> players=playerRepository.deletePlayersBetweenSalary(a, b);
+		if(players.isEmpty()) {
+			System.out.println("Data Get Deleted SuccessFully");
+		}else {
+			System.err.println("Data is -:NOT:- deleted Successfulll");
+		}
+
+	}
+
+}

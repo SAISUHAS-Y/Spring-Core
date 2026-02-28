@@ -1,0 +1,74 @@
+package com.jsp.spring.layers.service;
+
+import java.util.Scanner;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.jsp.spring.layers.entity.Product;
+import com.jsp.spring.layers.repository.ProductRepository;
+
+@Service
+public class ProductService {
+		
+	@Autowired
+	private ProductRepository productRepository;
+	
+	Scanner sc=new Scanner(System.in);
+	public void addProduct() {
+		Product product=new Product();
+		System.out.println("Enter the Product Id");
+		product.setProductId(sc.nextInt());
+		System.out.println("Enter the Product Name");
+		product.setProductName(sc.next());
+		System.out.println("Enter the Product Brand");
+		product.setBrand(sc.next());
+		System.out.println("Enter the Product Price");
+		product.setPrice(sc.nextInt());
+		
+		productRepository.addProduct(product);
+		System.out.println("Data is Added successfully");
+	}
+	public void findProductById() {
+		
+		System.out.println("Enter the Product ID");
+	Product product=productRepository.findProductById(sc.nextInt());
+	if(product!=null) {
+		System.out.println("Product ID: "+product.getProductId());
+		System.out.println("Product name: "+product.getProductName());
+		System.out.println("Product brand: "+product.getBrand());
+		System.out.println("Product price: "+product.getPrice());
+	}
+	else {
+		System.err.println("Some problem in fetching");
+	}
+	
+	}
+	public void updateProduct() {
+		System.out.println("Enter the id to Update");
+		Product product=productRepository.findProductById(sc.nextInt());
+		if(product!=null) {
+			System.out.println("Enter the Brand to Update");
+			product.setBrand(sc.next());
+			productRepository.updateProduct(product);
+		}
+		else {
+			System.err.println("Some problem in fetching");
+		}
+	}
+	
+	public void deleteProduct() {
+		System.out.println("Enter the Id to Delete the Product");
+		Product product=productRepository.findProductById(sc.nextInt());
+		if(product!=null) {
+			productRepository.deleteProduct(product);
+			
+			System.out.println("Data Deleted Successfully");
+		}
+		else {
+			System.err.println("Some problem in fetching");
+		}
+		
+	}
+}

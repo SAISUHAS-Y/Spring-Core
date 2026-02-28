@@ -1,0 +1,8 @@
+package com.sai.spring.annotation;
+
+@com
+public class Tiger {
+	public void sound() {
+		System.out.println("roar");
+	}
+}

@@ -1,0 +1,8 @@
+package com.sai.spring_application_context;
+
+public class Mobile {
+
+	public Mobile() {
+		System.out.println("object created");
+	}
+}
