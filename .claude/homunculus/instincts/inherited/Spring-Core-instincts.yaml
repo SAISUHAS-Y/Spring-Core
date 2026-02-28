@@ -1,0 +1,409 @@
+# Instincts generated from https://github.com/SAISUHAS-Y/Spring-Core
+# Generated: 2026-02-28T11:10:19.575Z
+# Version: 2.0
+
+---
+id: Spring-Core-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/SAISUHAS-Y/Spring-Core
+---
+
+# Spring Core Commit Length
+
+## Action
+
+Keep commit messages concise (under 50 characters)
+
+## Evidence
+
+- Average commit message length: 20 chars
+- Based on 8 commits
+
+---
+id: Spring-Core-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/SAISUHAS-Y/Spring-Core
+---
+
+# Spring Core Naming Files
+
+## Action
+
+Use PascalCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: PascalCase
+
+---
+id: Spring-Core-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/SAISUHAS-Y/Spring-Core
+---
+
+# Spring Core Export Style
+
+## Action
+
+Prefer mixed exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: mixed
+
+---
+id: Spring-Core-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/SAISUHAS-Y/Spring-Core
+---
+
+# Spring Core Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: Spring-Core-workflow-spring-project-creation
+trigger: "when doing spring project creation"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/SAISUHAS-Y/Spring-Core
+---
+
+# Spring Core Workflow Spring Project Creation
+
+## Action
+
+Follow the spring-project-creation workflow:
+1. Generate Maven project structure with pom.xml
+2. Create Eclipse IDE configuration files (.classpath, .project, .settings)
+3. Setup JPA persistence configuration (META-INF/persistence.xml)
+4. Create main application class (App.java)
+5. Setup Spring configuration (AppConfig.java or XML)
+6. Create entity classes for data model
+7. Implement repository layer for data access
+8. Implement service layer for business logic
+9. Implement controller layer for request handling
+10. Create test classes (AppTest.java)
+11. Generate compiled classes in target directory
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: pom.xml, .classpath, .project
+
+---
+id: Spring-Core-workflow-spring-configuration-setup
+trigger: "when doing spring configuration setup"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/SAISUHAS-Y/Spring-Core
+---
+
+# Spring Core Workflow Spring Configuration Setup
+
+## Action
+
+Follow the spring-configuration-setup workflow:
+1. Create Spring XML configuration files
+2. Setup application context configuration
+3. Configure dependency injection settings
+4. Create main application entry point
+5. Setup test configuration
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: spring.xml, *.xml, src/main/java/com/*/App.java
+
+---
+id: Spring-Core-workflow-maven-build-compilation
+trigger: "when doing maven build compilation"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/SAISUHAS-Y/Spring-Core
+---
+
+# Spring Core Workflow Maven Build Compilation
+
+## Action
+
+Follow the maven-build-compilation workflow:
+1. Process source files from src/main/java
+2. Generate compiled .class files
+3. Copy resources to target/classes
+4. Generate Maven metadata
+5. Create manifest files
+6. Process test classes
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~7x per month
+- Files: target/classes/**/*.class, target/classes/META-INF/MANIFEST.MF, target/classes/META-INF/maven/*/*/pom.properties
+
+---
+id: spring-core-java-class-naming
+trigger: "When creating a new Java class file"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: SAISUHAS-Y/Spring-Core
+---
+
+# Spring Core Java Class Naming
+
+## Action
+
+Use PascalCase naming convention
+
+## Evidence
+
+- Pattern in files: App.java, AppConfig.java, AppTest.java
+- All class files follow PascalCase across all projects
+
+---
+id: spring-core-method-naming
+trigger: "When creating Java methods or variables"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: SAISUHAS-Y/Spring-Core
+---
+
+# Spring Core Method Naming
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Standard Java convention observed in service and controller methods
+- Consistent across entity and repository classes
+
+---
+id: spring-core-constants-naming
+trigger: "When defining Java constants"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: SAISUHAS-Y/Spring-Core
+---
+
+# Spring Core Constants Naming
+
+## Action
+
+Use SCREAMING_SNAKE_CASE naming convention
+
+## Evidence
+
+- Java coding standard followed in configuration classes
+- Pattern observed in Spring configuration files
+
+---
+id: spring-core-test-class-suffix
+trigger: "When creating test classes"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: SAISUHAS-Y/Spring-Core
+---
+
+# Spring Core Test Class Suffix
+
+## Action
+
+Suffix class name with 'Test' (e.g., AppTest.java)
+
+## Evidence
+
+- Seen in commit examples: AppTest.java
+- Pattern consistent across test directory structure
+
+---
+id: spring-core-test-location
+trigger: "When creating test files"
+confidence: 0.95
+domain: testing
+source: repo-analysis
+source_repo: SAISUHAS-Y/Spring-Core
+---
+
+# Spring Core Test Location
+
+## Action
+
+Place tests in separate src/test/java directory
+
+## Evidence
+
+- Architecture shows testLocation: separate
+- Maven standard directory structure observed
+
+---
+id: spring-core-commit-descriptive
+trigger: "When making commits to Spring projects"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: SAISUHAS-Y/Spring-Core
+---
+
+# Spring Core Commit Descriptive
+
+## Action
+
+Use descriptive, feature-focused commit messages without prefixes
+
+## Evidence
+
+- Commit examples: 'Spring Autowiring', 'Spring Application Context'
+- Average length of 20 characters suggests concise descriptions
+
+---
+id: spring-core-project-creation-workflow
+trigger: "When starting a new Spring MVC project"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: SAISUHAS-Y/Spring-Core
+---
+
+# Spring Core Project Creation Workflow
+
+## Action
+
+Create Maven structure, then Eclipse config, then persistence setup, then layered architecture
+
+## Evidence
+
+- Workflow frequency: 2/month
+- Consistent file sequence across spring-project-creation workflow
+
+---
+id: spring-core-layered-architecture
+trigger: "When implementing Spring business logic"
+confidence: 0.9
+domain: architecture
+source: repo-analysis
+source_repo: SAISUHAS-Y/Spring-Core
+---
+
+# Spring Core Layered Architecture
+
+## Action
+
+Create entity layer first, then repository, then service, then controller
+
+## Evidence
+
+- Workflow steps show consistent layering
+- File patterns: entity/*.java, repository/*Repository.java, service/*Service.java, controller/*Controller.java
+
+---
+id: spring-core-config-setup
+trigger: "When configuring Spring dependency injection"
+confidence: 0.88
+domain: workflow
+source: repo-analysis
+source_repo: SAISUHAS-Y/Spring-Core
+---
+
+# Spring Core Config Setup
+
+## Action
+
+Create spring.xml configuration files and setup application context
+
+## Evidence
+
+- Workflow frequency: 3/month
+- Files involved: spring.xml, *.xml, App.java, AppTest.java
+
+---
+id: spring-core-maven-build
+trigger: "When building Spring Maven projects"
+confidence: 0.92
+domain: workflow
+source: repo-analysis
+source_repo: SAISUHAS-Y/Spring-Core
+---
+
+# Spring Core Maven Build
+
+## Action
+
+Generate target/classes structure with compiled .class files and Maven metadata
+
+## Evidence
+
+- Highest frequency workflow: 7/month
+- Consistent target directory structure across builds
+
+---
+id: spring-core-persistence-config
+trigger: "When setting up JPA in Spring projects"
+confidence: 0.85
+domain: architecture
+source: repo-analysis
+source_repo: SAISUHAS-Y/Spring-Core
+---
+
+# Spring Core Persistence Config
+
+## Action
+
+Place persistence.xml in src/main/java/META-INF/ directory
+
+## Evidence
+
+- Pattern in spring-project-creation workflow
+- Standard JPA configuration location observed
+
+---
+id: spring-core-eclipse-integration
+trigger: "When setting up Spring project in IDE"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: SAISUHAS-Y/Spring-Core
+---
+
+# Spring Core Eclipse Integration
+
+## Action
+
+Create .classpath, .project, and .settings/* configuration files
+
+## Evidence
+
+- Consistent Eclipse configuration across projects
+- Part of standard project creation workflow
+
