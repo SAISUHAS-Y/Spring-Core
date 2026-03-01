@@ -152,7 +152,7 @@ Before running the projects:
 ```bash
 git clone https://github.com/your-username/your-repository-name.git
 
-## 2️⃣ Import into IDE
+2️⃣ Import into IDE
 
 Open Eclipse / IntelliJ
 
@@ -160,7 +160,7 @@ Choose: Import → Existing Maven Project
 
 Select the project folder
 
-## 3️⃣ Run the Application
+3️⃣ Run the Application
 
 Locate the main class
 
