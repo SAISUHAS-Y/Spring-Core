@@ -109,7 +109,7 @@ DAO Layer
 
 ## 🚀 Running the Project
 
-### 1️⃣ Clone the Repository
+## 1️⃣ Clone the Repository
 ```bash
 git clone https://github.com/your-username/your-repository-name.git
 
