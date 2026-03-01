@@ -1,120 +1,92 @@
-# 🚀 Spring Core Practice Projects
+# 🌱 Spring Core – Foundation Projects
 
-## 📌 Overview
-
-This repository contains hands-on projects built using **Spring Core** to understand fundamental concepts such as Dependency Injection (DI), Application Context, Autowiring, Annotations, and Layered Architecture.
-
-The projects are structured progressively — starting from basic DI concepts to layered project implementation.
-
-These projects build a strong foundation before moving to Spring MVC and Spring Boot.
+> A structured journey through Spring Core concepts — from IOC basics to layered architecture implementation.
 
 ---
 
-# 📚 Repository Structure (As per Project Order)
+## 🧩 About This Repository
 
-1️⃣ Spring_DI  
-2️⃣ Spring_Application_Context  
-3️⃣ Spring_Autowiring  
-4️⃣ Spring_Annotation  
-5️⃣ Spring_HalfAnnotation  
-6️⃣ Spring_Layers  
-7️⃣ Spring_Player_Project  
+This repository contains practical implementations of **Spring Core fundamentals**.  
+Each module focuses on a specific concept to build a strong understanding of how Spring manages objects, dependencies, and application structure.
 
-(Note: `.metadata` is IDE-generated and not part of the application logic.)
+These projects serve as the backbone before moving into **Spring MVC** and **Spring Boot**.
 
 ---
 
-# 📁 Detailed Project Explanation
+## 📂 Modules Included
+
+| Order | Module Name | Focus Area |
+|-------|------------|------------|
+| 1 | `Spring_DI` | Dependency Injection (XML Based) |
+| 2 | `Spring_Application_Context` | Spring Container & Bean Lifecycle |
+| 3 | `Spring_Autowiring` | Automatic Dependency Injection |
+| 4 | `Spring_Annotation` | Annotation-Based Configuration |
+| 5 | `Spring_HalfAnnotation` | XML + Annotation Hybrid Config |
+| 6 | `Spring_Layers` | Layered Architecture |
+| 7 | `Spring_Player_Project` | Mini End-to-End Implementation |
+
+> ⚠ `.metadata` is IDE-generated and not part of application logic.
 
 ---
 
-## 1️⃣ Spring_DI
+## 🔍 Concept Journey
 
-**Description:** Introduction to Dependency Injection.
-
-**Concepts Covered:**
-- IOC (Inversion of Control)
+### 🔹 Dependency Injection (Spring_DI)
+Understanding how Spring removes tight coupling using:
 - Constructor Injection
 - Setter Injection
-- Loose Coupling
-- XML-based configuration
+- IOC container
 
 ---
 
-## 2️⃣ Spring_Application_Context
-
-**Description:** Understanding Spring Container.
-
-**Concepts Covered:**
-- ApplicationContext
-- BeanFactory
-- Bean lifecycle
-- Bean scopes (Singleton, Prototype)
+### 🔹 Spring Container Deep Dive (Spring_Application_Context)
+- ApplicationContext vs BeanFactory
+- Bean lifecycle management
+- Scope handling (Singleton, Prototype)
 
 ---
 
-## 3️⃣ Spring_Autowiring
-
-**Description:** Automatic Dependency Injection.
-
-**Concepts Covered:**
-- @Autowired
-- Constructor-based injection (Recommended)
-- Setter-based injection
-- Qualifiers
+### 🔹 Autowiring (Spring_Autowiring)
+- `@Autowired`
+- Constructor injection (recommended approach)
+- Qualifiers for resolving ambiguity
 
 ---
 
-## 4️⃣ Spring_Annotation
-
-**Description:** Annotation-based configuration.
-
-**Concepts Covered:**
-- @Component
-- @Service
-- @Repository
-- @Controller
-- Component Scanning
+### 🔹 Annotation Configuration (Spring_Annotation)
+- `@Component`
+- `@Service`
+- `@Repository`
+- Component scanning
 
 ---
 
-## 5️⃣ Spring_HalfAnnotation
-
-**Description:** Hybrid configuration (XML + Annotations).
-
-**Concepts Covered:**
-- Combining XML with annotations
-- Context configuration
-- Bean declaration flexibility
+### 🔹 Hybrid Configuration (Spring_HalfAnnotation)
+- Mixing XML & annotations
+- Flexible bean declaration
+- Configuration strategies
 
 ---
 
-## 6️⃣ Spring_Layers
-
-**Description:** Layered Architecture implementation.
-
-**Concepts Covered:**
+### 🔹 Layered Design (Spring_Layers)
+Implementation of:
 - Controller layer
 - Service layer
 - DAO layer
-- Separation of concerns
-- Clean architecture principles
+- Clean separation of concerns
 
 ---
 
-## 7️⃣ Spring_Player_Project
-
-**Description:** Mini project using Spring Core.
-
-**Concepts Covered:**
-- Complete project structure
-- Bean management
-- Dependency Injection
+### 🔹 Mini Project (Spring_Player_Project)
+A small structured project demonstrating:
 - Real-world object modeling
+- Dependency wiring
+- Layer interaction
+- Complete project structure
 
 ---
 
-# 🏗️ Architecture Demonstrated
+## 🏛 Architecture Representation
 Main Class
 ↓
 Spring Container (IOC)
@@ -126,7 +98,7 @@ DAO Layer
 
 ---
 
-# 🛠️ Tech Stack Used
+## ⚙️ Tech Stack
 
 - Java
 - Spring Core
@@ -135,35 +107,26 @@ DAO Layer
 
 ---
 
-# ⚙️ Prerequisites
+## 🚀 Running the Project
 
-Before running the projects:
-
-- Java 8+
-- Maven installed
-- Eclipse / IntelliJ IDEA
-
----
-
-# ▶️ How to Run
-
-## 1️⃣ Clone the Repository
-
+### 1️⃣ Clone the Repository
 ```bash
 git clone https://github.com/your-username/your-repository-name.git
 
-2️⃣ Import into IDE
+---
 
-Open Eclipse / IntelliJ
+## 2️⃣ Import into IDE
 
-Choose: Import → Existing Maven Project
+- Open **Eclipse** or **IntelliJ IDEA**
+- Select: **Import → Existing Maven Project**
+- Choose the repository folder
 
-Select the project folder
+---
 
-3️⃣ Run the Application
+## 3️⃣ Execute
 
-Locate the main class
+- Locate the **main class** inside the module
+- Right-click → **Run As → Java Application**
+- Observe the console output
 
-Right-click → Run As → Java Application
-
-Check console output
+---
